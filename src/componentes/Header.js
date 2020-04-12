@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-
-// un componente siempre es una funcion
-function Header(){
-
-    // siempre tenemos que retornar algo
-    return(
-        // codigo 
-        <h1>Peto sos clave</h1>
-    )
+const Header = ({titulo}) => {
+    return ( 
+        <Fragment>
+        <h1>{ titulo }</h1>
+        </Fragment>
+     );
 }
-
-// exportamos el componente
+ 
 export default Header;
