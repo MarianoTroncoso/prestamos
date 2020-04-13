@@ -1,13 +1,25 @@
 import React, { Fragment, useState } from 'react';
 import Header from './componentes/Header';
 import Formulario from './componentes/Formulario';
+import Mensaje from './componentes/Mensaje';
+import Resultado from './componentes/Resultado';
 
 function App() {
 
-  // cantidad de prestamos
   const [cantidad, guardarCantidad ] = useState(0);
-  // plazo a pagar
   const [plazo, guardarPlazo ] = useState(0);
+  const [total, guardarTotal] = useState(0);
+
+  let componente;
+  if( total === 0){
+    componente = <Mensaje/>
+  }else{
+    componente = <Resultado
+                    total={total}
+                    plazo={plazo}
+                    cantidad={cantidad}
+                />
+  }
 
 
   return (
@@ -21,8 +33,16 @@ function App() {
           guardarCantidad={guardarCantidad}
           plazo={plazo}
           guardarPlazo={guardarPlazo}
+          total={total}
+          guardarTotal={guardarTotal}
         />
+        <p className="mensajes">
+          { componente }
+        </p>
       </div>
+
+
+
     </Fragment>
   );
 }
