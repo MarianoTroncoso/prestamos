@@ -4,8 +4,10 @@ import Formulario from './componentes/Formulario';
 
 function App() {
 
-  // definir el state
+  // cantidad de prestamos
   const [cantidad, guardarCantidad ] = useState(0);
+  // plazo a pagar
+  const [plazo, guardarPlazo ] = useState(0);
 
 
   return (
@@ -17,6 +19,8 @@ function App() {
         <Formulario
           cantidad={cantidad}
           guardarCantidad={guardarCantidad}
+          plazo={plazo}
+          guardarPlazo={guardarPlazo}
         />
       </div>
     </Fragment>
